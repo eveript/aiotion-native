@@ -9,6 +9,7 @@ const Stack = createStackNavigator()
 
 const Navigation = ({ colorScheme }) => (
     <NavigationContainer linking={LinkingConfiguration} theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        {/* react에서 Switch 및 Route에 해당 */}
         <Stack.Navigator screenOptions={{ headerShown: false,
             // headerShown: true,
             // headerStyle: {
