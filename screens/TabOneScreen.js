@@ -1,11 +1,13 @@
 import React from 'react'
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Layout, Text } from '@ui-kitten/components';
+
 
 const TabOneScreen = () => {
     return (
-        <View style={styles.container}>
+        <Layout style={styles.container}>
             <Text style={styles.title}>Tab One</Text>
-        </View>
+        </Layout>
     );
 }
 const styles = StyleSheet.create({
