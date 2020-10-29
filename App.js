@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
+import {Image} from "react-native";
+
 import { AppearanceProvider, useColorScheme } from 'react-native-appearance'
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
@@ -9,6 +11,7 @@ import { Asset } from 'expo-asset'
 
 import Navigation from './navigation'
 import {AppLoading} from "expo";
+import {Ionicons} from "@expo/vector-icons";
 
 const cacheImages = (images) =>
     images.map((image) => {

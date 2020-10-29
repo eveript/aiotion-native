@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {createStackNavigator} from '@react-navigation/stack'
-import React from 'react'
+import React, {useEffect, useLayoutEffect} from 'react'
 
 import TabOneScreen from '../screens/TabOneScreen'
 import TabTwoScreen from '../screens/TabTwoScreen'
@@ -11,11 +11,12 @@ const TabOneStack = createStackNavigator()
 const TabTwoStack = createStackNavigator()
 
 const StackHeaderTitle = (props) => {
+    console.log(props)
     return (
         <>
             <TopNavigation
                 alignment="center"
-                title="Eva Application"
+                title={props?.children}
                 subtitle="Subtitle"
                 style={{
                     width: '100%',
@@ -59,7 +60,14 @@ const BottomTabBar = ({ navigation, state }) => (
     </BottomNavigation>
 )
 
-const BottomTabNavigator = () => {
+const getHeaderName = route => route?.state?.routeNames[route?.state?.index] || "TabOne"
+const BottomTabNavigator = ({ navigation, route }) => {
+    // useLayoutEffect(() => {
+    //     navigation.setOptions({
+    //         title: getHeaderName(route)
+    //     })
+    // }, [route])
+
     return (
         <BottomTab.Navigator initialRouteName="TabOne" tabBar={(props) => <BottomTabBar {...props} />}>
             {/* react에서 Route에 해당 */}
