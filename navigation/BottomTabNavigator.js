@@ -11,7 +11,6 @@ const TabOneStack = createStackNavigator()
 const TabTwoStack = createStackNavigator()
 
 const StackHeaderTitle = (props) => {
-    console.log(props)
     return (
         <>
             <TopNavigation
